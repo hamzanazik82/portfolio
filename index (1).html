@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Umar Hamza | E-Commerce & Digital Marketing Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0C0C10;--ink2:#16161C;--ink3:#1E1E28;--ink4:#272734;
+  --cream:#F5F0E8;--cream2:#EDE7D8;--cream3:#D8D0C0;
+  --amber:#C8922A;--amber-l:#E8B84B;--amber-d:#9A6E1A;
+  --rose:#C0394B;--teal:#1A9E8C;--blue:#2060B8;
+  --text:#F0EBE0;--text2:#A89E88;--text3:#6A6050;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Syne',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(12,12,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(200,146,42,0.12)}
+.nav-brand{display:flex;align-items:center;gap:0.75rem}
+.nav-monogram{width:38px;height:38px;background:var(--amber);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:1rem;color:var(--ink)}
+.nav-name{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--cream)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--amber);color:var(--ink);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.55rem 1.4rem;border-radius:2px;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--amber-l)}
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:10rem 5vw 6rem;position:relative;z-index:2}
+.hero-right{position:relative;overflow:hidden;background:var(--ink2)}
+.hero-right-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(200,146,42,0.04) 0,rgba(200,146,42,0.04) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,146,42,0.04) 0,rgba(200,146,42,0.04) 1px,transparent 1px,transparent 20px)}
+.hero-initials-large{position:absolute;bottom:-2rem;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:14rem;font-weight:700;color:rgba(200,146,42,0.07);line-height:1;user-select:none;white-space:nowrap}
+.hero-stats-right{position:absolute;top:50%;right:2rem;transform:translateY(-50%);display:flex;flex-direction:column;gap:1.5rem;z-index:3}
+.hero-stat{text-align:center;padding:1.2rem 1rem;border:1px solid rgba(200,146,42,0.2);border-radius:4px;background:rgba(12,12,16,0.5);backdrop-filter:blur(8px)}
+.hero-stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--amber);line-height:1;display:block}
+.hero-stat-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text2);margin-top:0.2rem;display:block}
+.hero-eyebrow{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem}
+.hero-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero-eyebrow-text{font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal)}
+.hero-name{font-family:var(--serif);font-size:clamp(3.5rem,6vw,6.5rem);font-weight:700;line-height:0.95;margin-bottom:1rem}
+.hero-name em{display:block;color:var(--amber);font-style:italic}
+.hero-title-line{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem}
+.hero-title-bar{width:40px;height:2px;background:var(--amber);flex-shrink:0}
+.hero-title-text{font-size:1rem;font-weight:600;letter-spacing:0.05em;color:var(--text2);text-transform:uppercase}
+.hero-desc{font-size:1rem;color:var(--text2);max-width:460px;line-height:1.9;margin-bottom:2.5rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.cta-primary{background:var(--amber);color:var(--ink);padding:0.9rem 2rem;border-radius:2px;font-weight:700;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+.cta-primary:hover{background:var(--amber-l);transform:translateY(-2px)}
+.cta-secondary{border:1px solid rgba(200,146,42,0.35);color:var(--amber);padding:0.9rem 2rem;border-radius:2px;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+.cta-secondary:hover{background:rgba(200,146,42,0.08)}
+.hero-location{margin-top:2.5rem;display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:var(--text3)}
+.hero-location-dot{width:6px;height:6px;background:var(--amber);border-radius:50%}
+section{padding:7rem 5vw}
+.container{max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:4rem}
+.section-super{font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:0.6rem}
+.section-h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;line-height:1.1;margin-bottom:0.5rem}
+.section-rule{display:flex;align-items:center;gap:1rem;margin-top:1.2rem}
+.section-rule-line{height:1px;background:linear-gradient(to right,var(--amber),transparent);flex:1;max-width:120px}
+.section-rule-dot{width:5px;height:5px;background:var(--amber);border-radius:50%;flex-shrink:0}
+#about{background:var(--ink2)}
+.about-layout{display:grid;grid-template-columns:1.1fr 0.9fr;gap:6rem;align-items:start}
+.about-body p{color:var(--text2);line-height:1.95;margin-bottom:1.3rem;font-size:0.95rem}
+.about-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.5rem 0}
+.kpi{background:var(--ink3);border:1px solid rgba(200,146,42,0.12);border-radius:4px;padding:1.4rem 1.2rem;text-align:center}
+.kpi-num{font-family:var(--serif);font-size:2.5rem;font-weight:700;color:var(--amber);line-height:1;display:block}
+.kpi-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-top:0.3rem;display:block}
+.about-sidebar{display:grid;gap:1rem}
+.info-card{background:var(--ink3);border:1px solid rgba(255,255,255,0.05);border-radius:4px;padding:1.2rem;border-left:3px solid var(--amber)}
+.info-card-label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--amber);margin-bottom:0.4rem;font-weight:700}
+.info-card-value{font-size:0.9rem;font-weight:500;color:var(--text)}
+.cert-grid{display:grid;gap:0.5rem}
+.cert-row{display:flex;align-items:center;gap:0.8rem;padding:0.7rem;background:var(--ink3);border-radius:4px}
+.cert-icon{width:30px;height:30px;background:rgba(200,146,42,0.1);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+.cert-info-name{font-size:0.85rem;font-weight:700;color:var(--text)}
+.cert-info-sub{font-size:0.72rem;color:var(--text3)}
+#experience{background:var(--ink)}
+.exp-timeline{position:relative;padding-left:2.5rem}
+.exp-timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--amber),rgba(200,146,42,0.05))}
+.exp-item{position:relative;padding-bottom:3.5rem}
+.exp-item:last-child{padding-bottom:0}
+.exp-node{position:absolute;left:-2.98rem;top:4px;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2px solid var(--text3);transition:all .3s}
+.exp-item:hover .exp-node{border-color:var(--amber);background:var(--amber);box-shadow:0 0 0 5px rgba(200,146,42,0.12)}
+.exp-current .exp-node{border-color:var(--teal);background:var(--teal);box-shadow:0 0 0 5px rgba(26,158,140,0.15)}
+.exp-date{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
+.exp-role{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:0.2rem}
+.exp-company{font-size:0.9rem;font-weight:600;color:var(--amber);margin-bottom:1rem}
+.exp-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem}
+.exp-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.65rem;border-radius:2px;background:rgba(200,146,42,0.08);border:1px solid rgba(200,146,42,0.18);color:var(--amber-l)}
+.exp-list{list-style:none;display:grid;gap:0.45rem}
+.exp-list li{display:flex;gap:0.75rem;align-items:flex-start;font-size:0.875rem;color:var(--text2);line-height:1.7}
+.exp-list li::before{content:'→';color:var(--amber);font-size:0.75rem;margin-top:0.3rem;flex-shrink:0;font-weight:700}
+#portfolio{background:var(--ink2)}
+.portfolio-tabs{display:flex;gap:0;margin-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);overflow-x:auto}
+.ptab{font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.85rem 1.5rem;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--sans)}
+.ptab.active{color:var(--amber);border-bottom-color:var(--amber)}
+.ptab:hover{color:var(--text)}
+.pane{display:none}
+.pane.active{display:block}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem}
+.project-card{background:var(--ink3);border:1px solid rgba(255,255,255,0.05);border-radius:6px;padding:1.6rem;transition:all .3s;position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--amber),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.project-card:hover{border-color:rgba(200,146,42,0.25);transform:translateY(-4px)}
+.project-card:hover::before{transform:scaleX(1)}
+.project-icon{font-size:1.6rem;margin-bottom:1rem}
+.project-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.3rem}
+.project-url{font-size:0.78rem;color:var(--amber);font-weight:600;margin-bottom:0.8rem;display:block;text-decoration:none}
+.project-url:hover{text-decoration:underline}
+.project-desc{font-size:0.82rem;color:var(--text2);line-height:1.7}
+.project-cats{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem}
+.project-cat{font-size:0.68rem;padding:0.2rem 0.6rem;background:rgba(26,158,140,0.08);border:1px solid rgba(26,158,140,0.2);color:var(--teal);border-radius:2px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+.clients-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.7rem}
+.client-chip{display:flex;align-items:center;gap:0.6rem;background:var(--ink3);border:1px solid rgba(255,255,255,0.05);border-radius:4px;padding:0.75rem 1rem;font-size:0.82rem;font-weight:600;color:var(--text2);transition:all .2s}
+.client-chip:hover{border-color:rgba(200,146,42,0.2);color:var(--text)}
+.client-chip-dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.cat-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;margin-top:2.5rem}
+.cat-header:first-child{margin-top:0}
+.cat-line{flex:1;height:1px;background:rgba(255,255,255,0.06)}
+.cat-label{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text3);white-space:nowrap}
+#skills{background:var(--ink)}
+.skills-layout{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.skill-block{background:var(--ink2);border:1px solid rgba(255,255,255,0.04);border-radius:6px;padding:2rem;transition:border-color .3s}
+.skill-block:hover{border-color:rgba(200,146,42,0.2)}
+.skill-block-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem}
+.skill-block-icon{width:44px;height:44px;background:rgba(200,146,42,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.skill-block-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text)}
+.skill-block-sub{font-size:0.72rem;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase}
+.skill-pills{display:flex;flex-wrap:wrap;gap:0.45rem}
+.skill-pill{font-size:0.75rem;padding:0.3rem 0.75rem;border-radius:2px;font-weight:600;border:1px solid rgba(200,146,42,0.18);background:rgba(200,146,42,0.06);color:var(--cream3)}
+#education{background:var(--ink2)}
+.edu-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.edu-main{background:var(--ink);border:1px solid rgba(200,146,42,0.15);border-radius:6px;padding:2.5rem;position:relative;overflow:hidden}
+.edu-main::after{content:'BSc';position:absolute;right:-0.5rem;top:-1rem;font-family:var(--serif);font-size:8rem;font-weight:700;color:rgba(200,146,42,0.04);line-height:1;pointer-events:none}
+.edu-degree{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text);margin-bottom:0.4rem}
+.edu-uni{font-size:0.95rem;font-weight:600;color:var(--amber);margin-bottom:0.3rem}
+.edu-meta{font-size:0.82rem;color:var(--text3);margin-bottom:1.2rem}
+.edu-thesis{font-size:0.85rem;color:var(--text2);padding:0.8rem 1rem;background:rgba(200,146,42,0.05);border-left:2px solid var(--amber);border-radius:0 4px 4px 0;margin-bottom:1.2rem;font-style:italic}
+.edu-subjects{display:flex;flex-wrap:wrap;gap:0.45rem}
+.edu-subject{font-size:0.72rem;padding:0.25rem 0.65rem;border-radius:2px;background:rgba(26,158,140,0.07);border:1px solid rgba(26,158,140,0.18);color:var(--teal);font-weight:700}
+.edu-side{display:grid;gap:1.2rem}
+.side-card{background:var(--ink);border:1px solid rgba(255,255,255,0.05);border-radius:6px;padding:1.6rem}
+.side-card-title{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem}
+.lang-row{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.lang-row:last-child{border-bottom:none;padding-bottom:0}
+.lang-name-text{font-weight:700;font-size:0.9rem;color:var(--text)}
+.lang-badge{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;padding:0.2rem 0.6rem;border-radius:2px}
+.lang-native{background:rgba(200,146,42,0.12);color:var(--amber);border:1px solid rgba(200,146,42,0.25)}
+.lang-c1{background:rgba(26,158,140,0.1);color:var(--teal);border:1px solid rgba(26,158,140,0.2)}
+#contact{background:var(--ink)}
+.contact-hero-text{text-align:center;max-width:600px;margin:0 auto 4rem;color:var(--text2);font-size:1rem;line-height:1.9}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact-links{display:grid;gap:0.8rem}
+.c-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:var(--ink2);border:1px solid rgba(255,255,255,0.05);border-radius:4px;text-decoration:none;color:var(--text);transition:all .2s}
+.c-link:hover{border-color:rgba(200,146,42,0.3);transform:translateX(4px)}
+.c-link-ico{width:38px;height:38px;background:rgba(200,146,42,0.1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;color:var(--amber);flex-shrink:0}
+.c-link-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:0.1rem}
+.c-link-val{font-size:0.88rem;font-weight:600;color:var(--text)}
+.contact-form{display:grid;gap:1rem}
+.f-group{display:grid;gap:0.35rem}
+.f-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3)}
+.f-input,.f-textarea{width:100%;background:var(--ink2);border:1px solid rgba(255,255,255,0.08);color:var(--text);padding:0.8rem 1rem;border-radius:4px;font-family:var(--sans);font-size:0.9rem;transition:border-color .2s;outline:none}
+.f-input:focus,.f-textarea:focus{border-color:var(--amber)}
+.f-input::placeholder,.f-textarea::placeholder{color:var(--text3)}
+.f-textarea{height:110px;resize:vertical}
+.f-btn{background:var(--amber);color:var(--ink);border:none;padding:0.9rem;border-radius:4px;font-family:var(--sans);font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;width:100%}
+.f-btn:hover{background:var(--amber-l)}
+footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,0.05);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--amber)}
+.footer-copy{font-size:0.78rem;color:var(--text3)}
+.socials{display:flex;gap:0.6rem}
+.s-link{width:34px;height:34px;border:1px solid rgba(255,255,255,0.08);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--text3);text-decoration:none;font-size:0.72rem;font-weight:700;transition:all .2s}
+.s-link:hover{border-color:var(--amber);color:var(--amber)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{display:none}
+  .hero-left{padding:8rem 5vw 4rem}
+  nav{padding:0.9rem 5vw}
+  .nav-links{display:none}
+  section{padding:4rem 5vw}
+  .about-layout,.edu-layout,.contact-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-monogram">UH</div>
+    <span class="nav-name">Umar Hamza</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:hamzanazik82@gmail.com">Hire Me</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><div class="hero-dot"></div><span class="hero-eyebrow-text">Available · Dubai, UAE</span></div>
+    <h1 class="hero-name">Umar<em>Hamza</em></h1>
+    <div class="hero-title-line"><div class="hero-title-bar"></div><span class="hero-title-text">E-Commerce &amp; Digital Marketing Expert</span></div>
+    <p class="hero-desc">Building, scaling, and managing full-stack online businesses — from Shopify store creation and paid ads to AI automation, supply chain operations, and multi-channel brand growth across UAE, UK &amp; Pakistan.</p>
+    <div class="hero-ctas"><a href="#portfolio" class="cta-primary">View My Work</a><a href="#contact" class="cta-secondary">Get In Touch</a></div>
+    <div class="hero-location"><div class="hero-location-dot"></div>City Tower Building, Al Qusais Industrial Area 1, Dubai, UAE</div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-pattern"></div>
+    <div class="hero-initials-large">UH</div>
+    <div class="hero-stats-right">
+      <div class="hero-stat"><span class="hero-stat-num">6+</span><span class="hero-stat-label">Yrs Experience</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">4K+</span><span class="hero-stat-label">Products Live</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">20+</span><span class="hero-stat-label">Brands Managed</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">Stores Built</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-super">Who I Am</div>
+      <h2 class="section-h2">Full-Stack E-Commerce &amp;<br>Digital Marketing Specialist</h2>
+      <div class="section-rule"><div class="section-rule-dot"></div><div class="section-rule-line"></div></div>
+    </div>
+    <div class="about-layout">
+      <div class="reveal">
+        <div class="about-body">
+          <p>I'm an experienced E-Commerce &amp; Digital Marketing Specialist with a strong background in managing full-scale online businesses from the ground up. Over the years, I've developed and scaled multiple online stores, optimized sales funnels, integrated AI automation tools, and led marketing strategies for brands across Pakistan, the UK, and the UAE.</p>
+          <p>My technical Computer Science foundation combined with hands-on e-commerce execution gives me a unique edge — I understand both the strategy and the systems. From creating Shopify stores from scratch to managing procurement, invoicing, B2B sales, and supply chain operations, I handle the full business lifecycle.</p>
+          <p>Currently based in Dubai with UAE &amp; Pakistani work permits, I bring a proven track record of scaling brands from zero, deep expertise across every digital channel, and hands-on experience with AI-powered business tools.</p>
+        </div>
+        <div class="about-kpis">
+          <div class="kpi"><span class="kpi-num">5</span><span class="kpi-label">Shopify Stores Built</span></div>
+          <div class="kpi"><span class="kpi-num">8+</span><span class="kpi-label">Websites Built</span></div>
+          <div class="kpi"><span class="kpi-num">22+</span><span class="kpi-label">Brands Served</span></div>
+          <div class="kpi"><span class="kpi-num">3</span><span class="kpi-label">Countries Worked In</span></div>
+        </div>
+      </div>
+      <div class="about-sidebar reveal d2">
+        <div class="info-card"><div class="info-card-label">Location</div><div class="info-card-value">Dubai, United Arab Emirates</div></div>
+        <div class="info-card"><div class="info-card-label">Email</div><div class="info-card-value">hamzanazik82@gmail.com</div></div>
+        <div class="info-card"><div class="info-card-label">WhatsApp</div><div class="info-card-value">+971 552 933 012</div></div>
+        <div class="info-card"><div class="info-card-label">Work Permit</div><div class="info-card-value">UAE (Emirati) &amp; Pakistani</div></div>
+        <div class="info-card"><div class="info-card-label">Driving Licence</div><div class="info-card-value">UAE Category A &amp; B (2023–2028)</div></div>
+        <div style="margin-top:0.5rem">
+          <div class="info-card-label" style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--amber);margin-bottom:0.8rem;font-weight:700">Certifications</div>
+          <div class="cert-grid">
+            <div class="cert-row"><div class="cert-icon">📱</div><div><div class="cert-info-name">Social Media Marketing</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+            <div class="cert-row"><div class="cert-icon">📊</div><div><div class="cert-info-name">Microsoft Excel</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+            <div class="cert-row"><div class="cert-icon">🌐</div><div><div class="cert-info-name">WordPress 5.1</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+            <div class="cert-row"><div class="cert-icon">🤖</div><div><div class="cert-info-name">Virtual Assistant</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-super">Career Journey</div>
+      <h2 class="section-h2">Work Experience</h2>
+      <div class="section-rule"><div class="section-rule-dot"></div><div class="section-rule-line"></div></div>
+    </div>
+    <div class="exp-timeline">
+      <div class="exp-item exp-current reveal">
+        <div class="exp-node"></div>
+        <div class="exp-date">Dec 2023 — Present</div>
+        <div class="exp-role">E-Commerce Manager</div>
+        <div class="exp-company">Hard Mount Goods Wholesalers LLC · Dubai, UAE</div>
+        <div class="exp-tags"><span class="exp-tag">Shopify</span><span class="exp-tag">SEO</span><span class="exp-tag">PPC/SEM</span><span class="exp-tag">AI Automation</span><span class="exp-tag">Inventory Mgmt</span><span class="exp-tag">B2B Sales</span><span class="exp-tag">Procurement</span></div>
+        <ul class="exp-list">
+          <li>Launched &amp; scaled Marino.ae from 8 to 4,000+ listed products — full e-commerce operation ownership</li>
+          <li>Executed product sourcing, photography, listing, pricing analysis vs Noon &amp; Amazon, and customer service</li>
+          <li>Optimized product visibility using SEO, Shopify Apps, and Google Shopping feeds</li>
+          <li>Handled PPC &amp; SEM campaigns, branding, content creation, and complete store design</li>
+          <li>Introduced AI integrations for invoicing and stock control using Flow App &amp; Myxify Technologies</li>
+          <li>Managed cash flow tracking, invoicing, warehouse operations; personally revived B2B offline sales model</li>
+          <li>Trained new staff in product listing, SEO, and e-commerce workflows</li>
+        </ul>
+      </div>
+      <div class="exp-item reveal d1">
+        <div class="exp-node"></div>
+        <div class="exp-date">Oct 2022 — Jul 2023</div>
+        <div class="exp-role">Digital Marketing Specialist &amp; Team Lead</div>
+        <div class="exp-company">Emenac Inc. · Lahore, Pakistan</div>
+        <div class="exp-tags"><span class="exp-tag">Google Ads</span><span class="exp-tag">Meta Ads</span><span class="exp-tag">SEO</span><span class="exp-tag">Email Marketing</span><span class="exp-tag">Team Lead</span><span class="exp-tag">KPI Reporting</span></div>
+        <ul class="exp-list">
+          <li>Led social media marketing team — managed campaigns for multiple UK &amp; US-based brands</li>
+          <li>Clients: Alhaq Travel, Muslims Holy Travel, Holidopia, Luxury Vibes, Packaging Mania, Technologiium, Digitvibez, Affinityvibez</li>
+          <li>Planned and executed SEO strategies achieving improved search rankings and lead conversions</li>
+          <li>Ran PPC campaigns (Google Ads &amp; Meta) with measurable ROI; email marketing via Mailchimp</li>
+          <li>Assessed paid media analytics against KPIs using Google Analytics; presented findings to stakeholders</li>
+          <li>Managed team hiring, training, and professional development; coordinated with external agencies</li>
+          <li>Supported paid media initiatives through asset trafficking, management, and tracking URL creation</li>
+        </ul>
+      </div>
+      <div class="exp-item reveal d2">
+        <div class="exp-node"></div>
+        <div class="exp-date">Dec 2020 — Jul 2022</div>
+        <div class="exp-role">Social Media Specialist</div>
+        <div class="exp-company">Digit Vibez Ltd. · Lahore, Pakistan</div>
+        <div class="exp-tags"><span class="exp-tag">Social Media</span><span class="exp-tag">Content Creation</span><span class="exp-tag">Canva</span><span class="exp-tag">Lead Generation</span><span class="exp-tag">UK Clients</span></div>
+        <ul class="exp-list">
+          <li>Handled social media for UK brands: London Motor Sports, Trade London, Affinity Vibez, Home World Management, Continental Car Hire, Plaza Chauffeurs Cars</li>
+          <li>Created content calendars, designed marketing graphics using Canva &amp; Adobe Express</li>
+          <li>Delivered consistent lead generation through targeted ad campaigns and audience targeting</li>
+          <li>Managed WhatsApp &amp; Messenger-based customer support for inbound leads</li>
+        </ul>
+      </div>
+      <div class="exp-item reveal d3">
+        <div class="exp-node"></div>
+        <div class="exp-date">Mar 2020 — Sep 2020</div>
+        <div class="exp-role">Online Content &amp; Community Manager</div>
+        <div class="exp-company">HORTI Group · Lahore, Pakistan</div>
+        <div class="exp-tags"><span class="exp-tag">WordPress</span><span class="exp-tag">Content Writing</span><span class="exp-tag">Social Media</span><span class="exp-tag">B2C</span></div>
+        <ul class="exp-list">
+          <li>Maintained and developed the company's WordPress website; managed content and landing pages</li>
+          <li>Managed GardenMart B2C sub-brand (garden tools &amp; accessories) across all social channels</li>
+          <li>Developed product descriptions, images, and seasonal advertising content</li>
+        </ul>
+      </div>
+      <div class="exp-item reveal d4">
+        <div class="exp-node"></div>
+        <div class="exp-date">Jan 2019 — Feb 2020</div>
+        <div class="exp-role">Social Media Specialist</div>
+        <div class="exp-company">U-Trainings · Lahore, Pakistan</div>
+        <div class="exp-tags"><span class="exp-tag">LMS Management</span><span class="exp-tag">Facebook Ads</span><span class="exp-tag">Retargeting</span><span class="exp-tag">Customer Service</span></div>
+        <ul class="exp-list">
+          <li>Managed LMS for hundreds of online learners — end-to-end registration, onboarding, and support</li>
+          <li>Executed Facebook &amp; Instagram ads for courses; increased sign-ups via smart retargeting campaigns</li>
+          <li>Determined keyword selection, audience targeting, retargeting and remarketing strategies</li>
+        </ul>
+      </div>
+      <div class="exp-item reveal d5">
+        <div class="exp-node"></div>
+        <div class="exp-date">Feb 2019 — Sep 2019</div>
+        <div class="exp-role">Social Media Marketing</div>
+        <div class="exp-company">Bin Romani Foods · Lahore, Pakistan</div>
+        <ul class="exp-list"><li>Managed social media presence and ran targeted ad campaigns for food brand visibility and sales growth</li></ul>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-node"></div>
+        <div class="exp-date">Feb 2018 — Dec 2018</div>
+        <div class="exp-role">Social Media Specialist</div>
+        <div class="exp-company">Sam Communication / Creative Duos · Lahore, Pakistan</div>
+        <ul class="exp-list">
+          <li>Created brand identities and digital presence from scratch for local clients across multiple industries</li>
+          <li>Designed custom graphics, banners, and social post templates; managed Facebook &amp; Instagram pages</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-super">My Work</div>
+      <h2 class="section-h2">Portfolio &amp; Projects</h2>
+      <div class="section-rule"><div class="section-rule-dot"></div><div class="section-rule-line"></div></div>
+    </div>
+    <div class="portfolio-tabs reveal">
+      <button class="ptab active" onclick="switchTab(this,'shopify')">Shopify Stores Built</button>
+      <button class="ptab" onclick="switchTab(this,'websites')">Websites Built</button>
+      <button class="ptab" onclick="switchTab(this,'digmarketing')">Digital Marketing</button>
+      <button class="ptab" onclick="switchTab(this,'allclients')">All Clients</button>
+    </div>
+    <div id="pane-shopify" class="pane active reveal">
+      <div class="project-grid">
+        <div class="project-card"><div class="project-icon">🛒</div><div class="project-name">Baitalarabs.com</div><a class="project-url" href="https://baitalarabs.com" target="_blank">baitalarabs.com ↗</a><div class="project-desc">Full Shopify store built from scratch — product sourcing, listings, store design, SEO, and paid advertising campaigns.</div><div class="project-cats"><span class="project-cat">Shopify</span><span class="project-cat">SEO</span><span class="project-cat">Paid Ads</span><span class="project-cat">Operations</span></div></div>
+        <div class="project-card"><div class="project-icon">🏪</div><div class="project-name">Marino.ae</div><a class="project-url" href="https://marino.ae" target="_blank">marino.ae ↗</a><div class="project-desc">Scaled from 8 to 4,000+ listed products. Full e-commerce operations — inventory, pricing, B2B sales &amp; AI automation integration.</div><div class="project-cats"><span class="project-cat">Shopify</span><span class="project-cat">4K+ Products</span><span class="project-cat">AI Automation</span><span class="project-cat">B2B Sales</span></div></div>
+        <div class="project-card"><div class="project-icon">🌍</div><div class="project-name">Gpolia.com</div><a class="project-url" href="https://gpolia.com" target="_blank">gpolia.com ↗</a><div class="project-desc">Complete Shopify store creation — design, product listings, digital marketing campaigns, and ongoing management.</div><div class="project-cats"><span class="project-cat">Shopify</span><span class="project-cat">Store Design</span><span class="project-cat">Marketing</span></div></div>
+        <div class="project-card"><div class="project-icon">📦</div><div class="project-name">Kemcord.com</div><a class="project-url" href="https://kemcord.com" target="_blank">kemcord.com ↗</a><div class="project-desc">Built and launched Shopify store — product research, listing optimization, store design, and paid advertising.</div><div class="project-cats"><span class="project-cat">Shopify</span><span class="project-cat">Product Research</span><span class="project-cat">Ads</span></div></div>
+      </div>
+    </div>
+    <div id="pane-websites" class="pane reveal">
+      <div class="project-grid">
+        <div class="project-card"><div class="project-icon">✈️</div><div class="project-name">Abroad Adventurez</div><a class="project-url" href="https://www.abroadadventurez.com/" target="_blank">abroadadventurez.com ↗</a><div class="project-desc">Travel &amp; adventure website — full design, development, content strategy, and digital marketing setup.</div><div class="project-cats"><span class="project-cat">WordPress</span><span class="project-cat">Travel</span><span class="project-cat">SEO</span></div></div>
+        <div class="project-card"><div class="project-icon">🏗️</div><div class="project-name">Hard Mount</div><a class="project-url" href="https://hardmount.com/" target="_blank">hardmount.com ↗</a><div class="project-desc">E-commerce and corporate site for hardware wholesaler. Full management of e-commerce operations, inventory, and brand presence.</div><div class="project-cats"><span class="project-cat">WordPress</span><span class="project-cat">E-Commerce</span><span class="project-cat">UAE</span></div></div>
+        <div class="project-card"><div class="project-icon">🌱</div><div class="project-name">HORTI Group</div><a class="project-url" href="https://hortigroup.com.pk/" target="_blank">hortigroup.com.pk ↗</a><div class="project-desc">Agriculture &amp; horticulture company — managed content, products, landing pages, and GardenMart B2C sub-brand.</div><div class="project-cats"><span class="project-cat">WordPress</span><span class="project-cat">Agriculture</span><span class="project-cat">B2C</span></div></div>
+        <div class="project-card"><div class="project-icon">🏢</div><div class="project-name">Build Point Trading</div><a class="project-url" href="https://buildpointtrading.com/" target="_blank">buildpointtrading.com ↗</a><div class="project-desc">Building materials trading company — website creation, product listings, operations support, and business management.</div><div class="project-cats"><span class="project-cat">WordPress</span><span class="project-cat">B2B</span><span class="project-cat">UAE</span></div></div>
+        <div class="project-card"><div class="project-icon">🚜</div><div class="project-name">Bobcat Rental Services</div><a class="project-url" href="https://bobcatrentalservices.com/" target="_blank">bobcatrentalservices.com ↗</a><div class="project-desc">Equipment rental company — full web presence setup, SEO, and digital marketing strategy.</div><div class="project-cats"><span class="project-cat">WordPress</span><span class="project-cat">Rental</span><span class="project-cat">SEO</span></div></div>
+      </div>
+    </div>
+    <div id="pane-digmarketing" class="pane reveal">
+      <div class="project-grid">
+        <div class="project-card"><div class="project-icon">🕌</div><div class="project-name">Travel Brands</div><div class="project-desc">Full paid advertising &amp; SEO for Alhaq Travels, Muslims Holy Travel, Holidopia, Abroad Adventurez — multi-channel campaigns targeting UK &amp; international audiences.</div><div class="project-cats"><span class="project-cat">Google Ads</span><span class="project-cat">Meta Ads</span><span class="project-cat">SEO</span><span class="project-cat">UK Market</span></div></div>
+        <div class="project-card"><div class="project-icon">🛍️</div><div class="project-name">E-Commerce Stores</div><div class="project-desc">Paid advertising &amp; performance marketing for Baitalarabs.com, Marino.ae, Gpolia.com, Kemcord.com — product ads, retargeting, and Google Shopping.</div><div class="project-cats"><span class="project-cat">Shopping Ads</span><span class="project-cat">PPC</span><span class="project-cat">Retargeting</span></div></div>
+        <div class="project-card"><div class="project-icon">📦</div><div class="project-name">Packaging &amp; Retail</div><div class="project-desc">Social media growth for Packaging Mania, Luxury Vibes, Affinityvibez — content strategy, ad creation, and engagement growth.</div><div class="project-cats"><span class="project-cat">Meta Ads</span><span class="project-cat">Content</span><span class="project-cat">SMO</span></div></div>
+        <div class="project-card"><div class="project-icon">🚗</div><div class="project-name">Automotive UK</div><div class="project-desc">Full social media marketing for London Motor Sports, London Motor Sports Cars, Plaza Chauffeurs Cars — page management and lead generation.</div><div class="project-cats"><span class="project-cat">Social Media</span><span class="project-cat">Lead Gen</span><span class="project-cat">UK</span></div></div>
+        <div class="project-card"><div class="project-icon">💻</div><div class="project-name">Technologiium FZE</div><a class="project-url" href="https://technologiium.com/" target="_blank">technologiium.com ↗</a><div class="project-desc">Digital marketing, paid advertising, operations, procurement, accounting, and sales support for tech company FZE in UAE.</div><div class="project-cats"><span class="project-cat">Full-Service</span><span class="project-cat">UAE</span><span class="project-cat">FZE</span></div></div>
+        <div class="project-card"><div class="project-icon">🍯</div><div class="project-name">Food &amp; FMCG</div><div class="project-desc">Brand marketing for Ajwa Khas, Honey Kolanji, Bin Romani Foods — product content, audience targeting, and social campaign execution.</div><div class="project-cats"><span class="project-cat">Meta Ads</span><span class="project-cat">FMCG</span><span class="project-cat">Brand</span></div></div>
+      </div>
+    </div>
+    <div id="pane-allclients" class="pane reveal">
+      <div class="cat-header"><span class="cat-label">Digital Marketing / Paid Advertising</span><div class="cat-line"></div></div>
+      <div class="clients-grid">
+        <div class="client-chip"><div class="client-chip-dot"></div>Baitalarabs.com</div><div class="client-chip"><div class="client-chip-dot"></div>Technologiium.com</div><div class="client-chip"><div class="client-chip-dot"></div>Marino.ae</div><div class="client-chip"><div class="client-chip-dot"></div>Gpolia.com</div><div class="client-chip"><div class="client-chip-dot"></div>Kemcord.com</div><div class="client-chip"><div class="client-chip-dot"></div>Abroad Adventurez</div><div class="client-chip"><div class="client-chip-dot"></div>Muslim Holy Travels</div><div class="client-chip"><div class="client-chip-dot"></div>Al Haq Travels</div><div class="client-chip"><div class="client-chip-dot"></div>Packagingmania.com</div><div class="client-chip"><div class="client-chip-dot"></div>Holidopia.com</div><div class="client-chip"><div class="client-chip-dot"></div>Luxuryvibez.pk</div><div class="client-chip"><div class="client-chip-dot"></div>Digitvibez</div><div class="client-chip"><div class="client-chip-dot"></div>Affinityvibez</div><div class="client-chip"><div class="client-chip-dot"></div>London Motor Sports</div><div class="client-chip"><div class="client-chip-dot"></div>London Motor Sports Cars</div><div class="client-chip"><div class="client-chip-dot"></div>Plaza Chauffeurs Cars</div><div class="client-chip"><div class="client-chip-dot"></div>Home World Management</div><div class="client-chip"><div class="client-chip-dot"></div>Bin Romani Foods</div><div class="client-chip"><div class="client-chip-dot"></div>U-Trainings</div><div class="client-chip"><div class="client-chip-dot"></div>Ajwa Khas</div><div class="client-chip"><div class="client-chip-dot"></div>Honey Kolanji</div><div class="client-chip"><div class="client-chip-dot"></div>Creative Duos</div>
+      </div>
+      <div class="cat-header"><span class="cat-label">Operations &amp; Logistics</span><div class="cat-line"></div></div>
+      <div class="clients-grid">
+        <div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>Technologiium FZE</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>Baitalarabs.com</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>Build Point Trading LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>Hard Mount Wholesalers LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>ACE Hardware</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>Marino.ae</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>Gpolia.com</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>U-Trainings</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--teal)"></div>Creative Duos</div>
+      </div>
+      <div class="cat-header"><span class="cat-label">Procurement &amp; Supply Chain</span><div class="cat-line"></div></div>
+      <div class="clients-grid">
+        <div class="client-chip"><div class="client-chip-dot" style="background:var(--rose)"></div>Al Nahar Al Dhabi Brokers</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--rose)"></div>Technologiium FZE</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--rose)"></div>Baitalarabs.com</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--rose)"></div>Build Point Trading LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--rose)"></div>Hard Mount Wholesalers LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--rose)"></div>Marino.ae</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--rose)"></div>Gpolia.com</div>
+      </div>
+      <div class="cat-header"><span class="cat-label">Accounting / Invoicing / Finance</span><div class="cat-line"></div></div>
+      <div class="clients-grid">
+        <div class="client-chip"><div class="client-chip-dot" style="background:var(--blue)"></div>Technologiium FZE</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--blue)"></div>Baitalarabs.com</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--blue)"></div>Build Point Trading LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--blue)"></div>Hard Mount Wholesalers LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--blue)"></div>Marino.ae</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--blue)"></div>Gpolia.com</div>
+      </div>
+      <div class="cat-header"><span class="cat-label">Sales &amp; Customer Service</span><div class="cat-line"></div></div>
+      <div class="clients-grid">
+        <div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>Technologiium FZE</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>Baitalarabs.com</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>Build Point Trading LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>Hard Mount Wholesalers LLC</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>Marino.ae</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>Gpolia.com</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>U-Trainings</div><div class="client-chip"><div class="client-chip-dot" style="background:var(--amber-l)"></div>Creative Duos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-super">Expertise</div>
+      <h2 class="section-h2">Skills &amp; Tools</h2>
+      <div class="section-rule"><div class="section-rule-dot"></div><div class="section-rule-line"></div></div>
+    </div>
+    <div class="skills-layout">
+      <div class="skill-block reveal"><div class="skill-block-header"><div class="skill-block-icon">🛒</div><div><div class="skill-block-title">E-Commerce</div><div class="skill-block-sub">Full-stack store management</div></div></div><div class="skill-pills"><span class="skill-pill">Shopify</span><span class="skill-pill">PrestaShop</span><span class="skill-pill">WordPress</span><span class="skill-pill">Amazon</span><span class="skill-pill">Noon</span><span class="skill-pill">Facebook Shop</span><span class="skill-pill">Instagram Shop</span><span class="skill-pill">Product Research</span><span class="skill-pill">Listing Optimization</span><span class="skill-pill">Store Design</span><span class="skill-pill">Order Fulfillment</span><span class="skill-pill">Competitor Analysis</span></div></div>
+      <div class="skill-block reveal d1"><div class="skill-block-header"><div class="skill-block-icon">📈</div><div><div class="skill-block-title">Digital Marketing</div><div class="skill-block-sub">Multi-channel advertising</div></div></div><div class="skill-pills"><span class="skill-pill">SEO</span><span class="skill-pill">SEM / SEA</span><span class="skill-pill">SMO</span><span class="skill-pill">Google Ads</span><span class="skill-pill">Meta Ads</span><span class="skill-pill">TikTok Ads</span><span class="skill-pill">PPC</span><span class="skill-pill">Email Marketing</span><span class="skill-pill">Mailchimp</span><span class="skill-pill">Influencer Marketing</span><span class="skill-pill">Google Shopping</span><span class="skill-pill">Retargeting &amp; Remarketing</span><span class="skill-pill">KPI Reporting</span></div></div>
+      <div class="skill-block reveal d2"><div class="skill-block-header"><div class="skill-block-icon">🤖</div><div><div class="skill-block-title">AI &amp; Automation</div><div class="skill-block-sub">Workflow automation &amp; tools</div></div></div><div class="skill-pills"><span class="skill-pill">AI Integration</span><span class="skill-pill">Myxify Technologies</span><span class="skill-pill">Flow App</span><span class="skill-pill">Invoicing Automation</span><span class="skill-pill">Stock Control AI</span><span class="skill-pill">Process Automation</span><span class="skill-pill">AI Content Tools</span></div></div>
+      <div class="skill-block reveal d3"><div class="skill-block-header"><div class="skill-block-icon">📊</div><div><div class="skill-block-title">Analytics &amp; Finance</div><div class="skill-block-sub">Data, reporting &amp; accounting</div></div></div><div class="skill-pills"><span class="skill-pill">Google Analytics</span><span class="skill-pill">Google Business</span><span class="skill-pill">Wave</span><span class="skill-pill">QuickBooks</span><span class="skill-pill">Zoho</span><span class="skill-pill">Freshbooks</span><span class="skill-pill">Xero</span><span class="skill-pill">Cash Flow Mgmt</span><span class="skill-pill">Invoicing</span><span class="skill-pill">Payment Collection</span><span class="skill-pill">Budget Management</span><span class="skill-pill">Financial Reporting</span></div></div>
+      <div class="skill-block reveal d4"><div class="skill-block-header"><div class="skill-block-icon">🎨</div><div><div class="skill-block-title">Design &amp; Content</div><div class="skill-block-sub">Creative &amp; visual production</div></div></div><div class="skill-pills"><span class="skill-pill">Canva (Expert)</span><span class="skill-pill">Adobe Express</span><span class="skill-pill">Graphic Design</span><span class="skill-pill">Content Creation</span><span class="skill-pill">Copywriting</span><span class="skill-pill">Video Ads</span><span class="skill-pill">Brand Identity</span><span class="skill-pill">WordPress Design</span><span class="skill-pill">Product Photography</span></div></div>
+      <div class="skill-block reveal d5"><div class="skill-block-header"><div class="skill-block-icon">📦</div><div><div class="skill-block-title">Operations &amp; Supply Chain</div><div class="skill-block-sub">Logistics, procurement &amp; warehousing</div></div></div><div class="skill-pills"><span class="skill-pill">Inventory Management</span><span class="skill-pill">Warehousing</span><span class="skill-pill">Procurement</span><span class="skill-pill">B2B Sales</span><span class="skill-pill">Pricing Analysis</span><span class="skill-pill">Product Sourcing</span><span class="skill-pill">Dispatching</span><span class="skill-pill">Supply Chain Mgmt</span><span class="skill-pill">Customer Service</span><span class="skill-pill">MS Office / 365</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-super">Academic Background</div>
+      <h2 class="section-h2">Education &amp; Certifications</h2>
+      <div class="section-rule"><div class="section-rule-dot"></div><div class="section-rule-line"></div></div>
+    </div>
+    <div class="edu-layout">
+      <div class="edu-main reveal">
+        <div class="edu-degree">BS Computer Sciences</div>
+        <div class="edu-uni">Government College University · Lahore, Pakistan</div>
+        <div class="edu-meta">Aug 2017 – Mar 2022 &nbsp;·&nbsp; GPA: 3.12 / 4.0 &nbsp;·&nbsp; 131 Credit Hours &nbsp;·&nbsp; EQF Level 6</div>
+        <div class="edu-thesis">Thesis: Synchronised Web Based Supply Chain Management System</div>
+        <div class="edu-subjects"><span class="edu-subject">C++ / Java / Python</span><span class="edu-subject">Data Structures</span><span class="edu-subject">DBMS</span><span class="edu-subject">Software Engineering</span><span class="edu-subject">Web &amp; Mobile Dev</span><span class="edu-subject">AI &amp; Machine Learning</span><span class="edu-subject">Computer Networks</span><span class="edu-subject">Information Security</span><span class="edu-subject">OOP</span><span class="edu-subject">Computer Architecture</span></div>
+      </div>
+      <div class="edu-side reveal d2">
+        <div class="side-card">
+          <div class="side-card-title">Languages</div>
+          <div class="lang-row"><span class="lang-name-text">Urdu</span><span class="lang-badge lang-native">Native</span></div>
+          <div class="lang-row"><span class="lang-name-text">English</span><span class="lang-badge lang-c1">C1 Proficient</span></div>
+        </div>
+        <div class="side-card">
+          <div class="side-card-title">Certifications · Fiverr 2023</div>
+          <div class="cert-grid">
+            <div class="cert-row"><div class="cert-icon">📱</div><div><div class="cert-info-name">Social Media Marketing</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+            <div class="cert-row"><div class="cert-icon">📊</div><div><div class="cert-info-name">Microsoft Excel</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+            <div class="cert-row"><div class="cert-icon">🌐</div><div><div class="cert-info-name">WordPress 5.1</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+            <div class="cert-row"><div class="cert-icon">🤖</div><div><div class="cert-info-name">Virtual Assistant</div><div class="cert-info-sub">Fiverr · 2023</div></div></div>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-card-title">UAE Driving Licence</div>
+          <div class="lang-row"><span class="lang-name-text">Category A</span><span class="lang-badge lang-c1">2023 – 2028</span></div>
+          <div class="lang-row"><span class="lang-name-text">Category B</span><span class="lang-badge lang-c1">2023 – 2028</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center">
+      <div class="section-super">Let's Work Together</div>
+      <h2 class="section-h2">Get In Touch</h2>
+      <div class="section-rule" style="justify-content:center"><div class="section-rule-line" style="max-width:60px"></div><div class="section-rule-dot"></div><div class="section-rule-line" style="max-width:60px"></div></div>
+    </div>
+    <p class="contact-hero-text reveal">Open to full-time roles, consulting, and freelance projects in e-commerce management, digital marketing, and business operations. Based in Dubai and available immediately.</p>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-links">
+          <a href="mailto:hamzanazik82@gmail.com" class="c-link"><div class="c-link-ico">✉</div><div><div class="c-link-label">Email</div><div class="c-link-val">hamzanazik82@gmail.com</div></div></a>
+          <a href="https://wa.me/971552933012" target="_blank" class="c-link"><div class="c-link-ico">WA</div><div><div class="c-link-label">WhatsApp</div><div class="c-link-val">+971 552 933 012</div></div></a>
+          <a href="https://linkedin.com/in/itshamza311" target="_blank" class="c-link"><div class="c-link-ico">in</div><div><div class="c-link-label">LinkedIn</div><div class="c-link-val">linkedin.com/in/itshamza311</div></div></a>
+          <a href="https://instagram.com/umarhamza770" target="_blank" class="c-link"><div class="c-link-ico">ig</div><div><div class="c-link-label">Instagram</div><div class="c-link-val">@umarhamza770</div></div></a>
+          <a href="https://facebook.com/umarhamza770" target="_blank" class="c-link"><div class="c-link-ico">fb</div><div><div class="c-link-label">Facebook</div><div class="c-link-val">umarhamza770</div></div></a>
+          <a href="https://twitter.com/hamzanazik82" target="_blank" class="c-link"><div class="c-link-ico">tw</div><div><div class="c-link-label">Twitter / X</div><div class="c-link-val">@hamzanazik82</div></div></a>
+          <a href="https://ecommerce-digital-market-2eddvhy.gamma.site/" target="_blank" class="c-link"><div class="c-link-ico">🌐</div><div><div class="c-link-label">Full Portfolio</div><div class="c-link-val">View on Gamma</div></div></a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="f-group"><label class="f-label">Your Name</label><input type="text" class="f-input" placeholder="Your full name" required/></div>
+          <div class="f-group"><label class="f-label">Email Address</label><input type="email" class="f-input" placeholder="your@email.com" required/></div>
+          <div class="f-group"><label class="f-label">Subject</label><input type="text" class="f-input" placeholder="Job opportunity / Project / Collaboration"/></div>
+          <div class="f-group"><label class="f-label">Message</label><textarea class="f-textarea" placeholder="Tell me about the opportunity or project…" required></textarea></div>
+          <button type="submit" class="f-btn">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Umar Hamza</div>
+  <div class="footer-copy">© 2025 · E-Commerce &amp; Digital Marketing Expert · Dubai, UAE</div>
+  <div class="socials">
+    <a href="https://linkedin.com/in/itshamza311" class="s-link" target="_blank">in</a>
+    <a href="https://instagram.com/umarhamza770" class="s-link" target="_blank">ig</a>
+    <a href="https://facebook.com/umarhamza770" class="s-link" target="_blank">fb</a>
+    <a href="https://twitter.com/hamzanazik82" class="s-link" target="_blank">tw</a>
+    <a href="https://pinterest.com/hamzanazik82" class="s-link" target="_blank">pt</a>
+  </div>
+</footer>
+
+<script>
+function switchTab(btn,paneId){document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('pane-'+paneId).classList.add('active')}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const sections=document.querySelectorAll('section[id]');const navLinks=document.querySelectorAll('.nav-links a');window.addEventListener('scroll',()=>{let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id});navLinks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--amber)':''})});
+function handleSubmit(e){e.preventDefault();const btn=e.target.querySelector('.f-btn');btn.textContent='✓ Sent! Umar will be in touch soon.';btn.style.background='var(--teal)';setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';e.target.reset()},3500)}
+</script>
+</body>
+</html>
